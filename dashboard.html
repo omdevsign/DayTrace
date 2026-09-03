@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayTrace - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">DayTrace</a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="habits.html">Habits</a></li>
+            <li><a href="sleep.html">Sleep & Recovery</a></li>
+            <li><a href="journal.html">Micro-Journal</a></li>
+            <li><a href="auth.html" class="btn-logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        
+        <div class="welcome-header">
+            <h1>Daily Wellness Dashboard</h1>
+            <p>Log your end-of-day progress in under two minutes.</p>
+        </div>
+
+        <div class="card-form">
+            <h2 class="card-title">Log Today's Entry</h2>
+            <form id="daily-log-form">
+                
+                <div class="input-group date-input-group">
+                    <label for="log-date">Entry Date</label>
+                    <input type="date" id="log-date" required>
+                </div>
+
+                <div class="form-grid">
+                    
+                    <div class="form-section">
+                        <h3>🌙 Sleep & Energy</h3>
+                        <div class="input-group">
+                            <label for="sleep-hours">Sleep Duration (Hours)</label>
+                            <input type="number" id="sleep-hours" step="0.5" min="0" max="24" placeholder="e.g. 7.5" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="energy-rating">Energy Level (1 to 5)</label>
+                            <select id="energy-rating" required>
+                                <option value="">Select Level</option>
+                                <option value="1">1 - Very Low</option>
+                                <option value="2">2 - Low</option>
+                                <option value="3">3 - Moderate</option>
+                                <option value="4">4 - High</option>
+                                <option value="5">5 - Excellent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>⚡ Daily Habits</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="habit-exercise"> Exercised 30 mins
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="habit-read"> Read 15 pages
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="habit-water"> Hydration target met
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>🖋️ 3-Line Reflection</h3>
+                        <div class="input-group">
+                            <label for="reflection-well">What went well today?</label>
+                            <textarea id="reflection-well" placeholder="Highlight of the day..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="reflection-improve">What could be improved?</label>
+                            <textarea id="reflection-improve" placeholder="Area for growth..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="reflection-grateful">One thing I'm grateful for</label>
+                            <textarea id="reflection-grateful" placeholder="Gratitude statement..."></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn-submit-log">Save Daily Entry</button>
+            </form>
+        </div>
+
+        <div class="card-table">
+            <h2 class="card-title">Past Logs History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Sleep</th>
+                        <th>Energy</th>
+                        <th>Habits Met</th>
+                        <th>Highlight</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table-body">
+                    <tr>
+                        <td>2026-03-02</td>
+                        <td>7.5 hrs</td>
+                        <td><span class="status-badge badge-good">4 / 5</span></td>
+                        <td>3 / 3</td>
+                        <td>Completed MCA lab project on time.</td>
+                        <td>
+                            <button class="action-btn btn-edit">Edit</button>
+                            <button class="action-btn btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2026-03-01</td>
+                        <td>5.0 hrs</td>
+                        <td><span class="status-badge badge-low">2 / 5</span></td>
+                        <td>1 / 3</td>
+                        <td>Started reading a new tech documentation.</td>
+                        <td>
+                            <button class="action-btn btn-edit">Edit</button>
+                            <button class="action-btn btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

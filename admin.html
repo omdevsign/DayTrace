@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayTrace - Admin Portal</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">DayTrace</a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="habits.html">Habits</a></li>
+            <li><a href="sleep.html">Sleep & Recovery</a></li>
+            <li><a href="journal.html">Micro-Journal</a></li>
+            <li><a href="admin.html" class="active">Admin</a></li>
+            <li><a href="auth.html" class="btn-logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <div class="page-header">
+            <h1>System Administration</h1>
+            <p>Monitor system usage and manage registered user accounts.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Total Registered Users</span>
+                <div class="stat-value">128</div>
+                <span class="stat-meta">+12 registered this week</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Daily Logs Submitted</span>
+                <div class="stat-value">1,420</div>
+                <span class="stat-meta">87% completion rate</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Active Sessions</span>
+                <div class="stat-value">14</div>
+                <span class="stat-meta">Peak hour activity</span>
+            </div>
+        </div>
+
+        <div class="card-table">
+            <div class="table-header">
+                <h2>User Management</h2>
+                <input type="text" id="user-search" class="search-input" placeholder="Search by name or email...">
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Details</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Joined Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body">
+                    <tr>
+                        <td>#1</td>
+                        <td>
+                            <strong>Om Gohil</strong><br>
+                            <small>om.gohil@example.com</small>
+                        </td>
+                        <td><span class="badge badge-role">Admin</span></td>
+                        <td><span class="badge badge-active">Active</span></td>
+                        <td>2026-03-01</td>
+                        <td>
+                            <button class="btn-action btn-suspend">Suspend</button>
+                            <button class="btn-action btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#2</td>
+                        <td>
+                            <strong>John Doe</strong><br>
+                            <small>john.doe@example.com</small>
+                        </td>
+                        <td><span class="badge badge-user">User</span></td>
+                        <td><span class="badge badge-active">Active</span></td>
+                        <td>2026-03-02</td>
+                        <td>
+                            <button class="btn-action btn-suspend">Suspend</button>
+                            <button class="btn-action btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#3</td>
+                        <td>
+                            <strong>Sarah M</strong><br>
+                            <small>sarah.m@example.com</small>
+                        </td>
+                        <td><span class="badge badge-user">User</span></td>
+                        <td><span class="badge badge-suspended">Suspended</span></td>
+                        <td>2026-03-03</td>
+                        <td>
+                            <button class="btn-action btn-activate">Activate</button>
+                            <button class="btn-action btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

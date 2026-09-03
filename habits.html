@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayTrace - Habit Formation</title>
+    <link rel="stylesheet" href="css/habits.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">DayTrace</a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="habits.html" class="active">Habits</a></li>
+            <li><a href="sleep.html">Sleep & Recovery</a></li>
+            <li><a href="journal.html">Micro-Journal</a></li>
+            <li><a href="auth.html" class="btn-logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Habit Formation & Routine Building</h1>
+            <p>Define new recurring habits and log daily execution consistency.</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="card form-card">
+                <h2 class="card-title">Define New Habit</h2>
+                <form id="add-habit-form">
+                    <div class="input-group">
+                        <label for="habit-name">Habit Name</label>
+                        <input type="text" id="habit-name" placeholder="e.g. Read 15 Pages" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="target-frequency">Target Frequency</label>
+                        <select id="target-frequency" required>
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-add">Add Habit Target</button>
+                </form>
+            </div>
+
+            <div class="card list-card">
+                <h2 class="card-title">Active Configured Habits</h2>
+                <div class="habit-list" id="habit-list-container">
+                    
+                    <div class="habit-item">
+                        <div class="habit-details">
+                            <h4>Morning Workout <span class="badge-freq">Daily</span></h4>
+                            <p>Created: 2026-03-01</p>
+                        </div>
+                        <div class="habit-actions">
+                            <button class="btn-complete">Log Complete</button>
+                            <button class="btn-delete-habit">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="habit-item">
+                        <div class="habit-details">
+                            <h4>Hydration Target (3L) <span class="badge-freq">Daily</span></h4>
+                            <p>Created: 2026-03-01</p>
+                        </div>
+                        <div class="habit-actions">
+                            <button class="btn-complete">Log Complete</button>
+                            <button class="btn-delete-habit">Delete</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/habits.js"></script>
+</body>
+</html>

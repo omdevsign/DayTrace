@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DayTrace - Login & Registration</title>
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<div class="auth-container">
+    <div class="auth-info">
+        <h1>DayTrace</h1>
+        <p>The centralized web-based personal utility platform designed to solve your personal management challenges.</p>
+        <ul>
+            <li>Track consistency across essential health habits</li>
+            <li>Monitor sleep duration and subjective energy levels</li>
+            <li>Author short 3-line daily reflections</li>
+            <li>Log your end-of-day data in under two minutes</li>
+        </ul>
+    </div>
+
+    <div class="auth-forms">
+        <div class="form-toggle">
+            <button id="toggle-login" class="active" onclick="switchTab('login')">Login</button>
+            <button id="toggle-register" onclick="switchTab('register')">Register</button>
+        </div>
+
+        <form id="login-form" class="form-view active" onsubmit="return validateLogin(event)">
+            <div class="input-group">
+                <label for="login-email">Email Address</label>
+                <input type="email" id="login-email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+                <div class="form-sub-link">
+                    <a href="#" onclick="handleForgotPassword(event)">Forgot Password?</a>
+                </div>
+            </div>
+            <button type="submit" class="btn-submit">Sign In</button>
+            <div class="bypass-link-wrapper">
+                <a href="dashboard.html" class="link-bypass">Bypass Login & Go to Dashboard</a><br>
+                <a href="admin.html" class="link-bypass">Admin Page</a>
+            </div>
+        </form>
+
+        <form id="register-form" class="form-view" onsubmit="return validateRegister(event)">
+            <div class="input-group">
+                <label for="reg-username">Username</label>
+                <input type="text" id="reg-username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="reg-email">Email Address</label>
+                <input type="email" id="reg-email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="reg-password">Password</label>
+                <input type="password" id="reg-password" name="password" required minlength="6">
+            </div>
+            <div class="input-group">
+                <label for="reg-confirm-password">Confirm Password</label>
+                <input type="password" id="reg-confirm-password" required>
+                <div id="password-error" class="error-message">Passwords do not match!</div>
+            </div>
+            <button type="submit" class="btn-submit">Create Account</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

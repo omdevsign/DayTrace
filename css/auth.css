@@ -1,0 +1,226 @@
+:root {
+    --bg-color: #f8fafc;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --primary-accent: #6366f1;
+    --primary-hover: #4f46e5;
+    --white: #ffffff;
+    --border-light: #e2e8f0;
+    --error-color: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 900px;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.auth-container {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.auth-info {
+    flex: 1;
+    background-color: var(--primary-accent);
+    color: var(--white);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-info h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.auth-info p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.auth-info ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.auth-info li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.auth-info li::before {
+    content: "✓";
+    color: var(--white);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.auth-forms {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+    background-color: var(--white);
+}
+
+.form-toggle {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.form-toggle button {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.form-toggle button.active {
+    color: var(--primary-accent);
+    border-bottom: 2px solid var(--primary-accent);
+}
+
+.form-view {
+    display: none;
+}
+
+.form-view.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--text-main);
+    transition: 0.2s border-color ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+}
+
+.form-sub-link {
+    text-align: right;
+    margin-top: 6px;
+}
+
+.form-sub-link a {
+    color: var(--primary-accent);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.form-sub-link a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-accent);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.bypass-link-wrapper {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.link-bypass {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link-bypass:hover {
+    color: var(--primary-accent);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+    }
+    .auth-info {
+        padding: 30px 20px;
+    }
+    .auth-forms {
+        padding: 30px 20px;
+    }
+}

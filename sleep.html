@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayTrace - Sleep & Recovery</title>
+    <link rel="stylesheet" href="css/sleep.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">DayTrace</a>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="habits.html">Habits</a></li>
+            <li><a href="sleep.html" class="active">Sleep & Recovery</a></li>
+            <li><a href="journal.html">Micro-Journal</a></li>
+            <li><a href="auth.html" class="btn-logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Sleep & Recovery Tracker</h1>
+            <p>Set target sleep goals and record daily sleep duration and energy metrics.</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="card goal-card">
+                <h2 class="card-title">Target Goal</h2>
+                <form id="goal-form">
+                    <div class="input-group">
+                        <label for="target-hours">Target Sleep Duration (Hours)</label>
+                        <input type="number" id="target-hours" step="0.5" min="4" max="12" value="8.0" required>
+                    </div>
+                    <button type="submit" class="btn-accent">Update Goal Baseline</button>
+                </form>
+            </div>
+
+            <div class="card log-card">
+                <h2 class="card-title">Log Sleep Entry</h2>
+                <form id="sleep-log-form">
+                    <div class="input-group">
+                        <label for="log-date">Log Date</label>
+                        <input type="date" id="log-date" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="hours-slept">Hours Slept</label>
+                        <input type="number" id="hours-slept" step="0.5" min="0" max="24" placeholder="e.g. 7.5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="energy-rating">Qualitative Energy Level (1 to 5)</label>
+                        <select id="energy-rating" required>
+                            <option value="">Select Level</option>
+                            <option value="1">1 - Very Low</option>
+                            <option value="2">2 - Low</option>
+                            <option value="3">3 - Moderate</option>
+                            <option value="4">4 - High</option>
+                            <option value="5">5 - Excellent</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-accent">Record Sleep Entry</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card table-card">
+            <h2 class="card-title">Sleep & Recovery Logs History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Hours Slept</th>
+                        <th>Target Comparison</th>
+                        <th>Energy Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="sleep-table-body">
+                    <tr>
+                        <td>2026-03-02</td>
+                        <td>8.0 hrs</td>
+                        <td><span class="status-badge badge-good">Target Met</span></td>
+                        <td>4 / 5</td>
+                        <td>
+                            <button class="action-btn btn-edit">Edit</button>
+                            <button class="action-btn btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2026-03-01</td>
+                        <td>5.5 hrs</td>
+                        <td><span class="status-badge badge-low">Sleep Deficit</span></td>
+                        <td>2 / 5</td>
+                        <td>
+                            <button class="action-btn btn-edit">Edit</button>
+                            <button class="action-btn btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/sleep.js"></script>
+</body>
+</html>
