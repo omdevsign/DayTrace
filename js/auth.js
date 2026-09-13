@@ -1,3 +1,11 @@
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error) {
+        alert(error);
+    }
+});
+
 function switchTab(tab) {
     document.getElementById('login-form').classList.remove('active');
     document.getElementById('register-form').classList.remove('active');
@@ -23,24 +31,17 @@ function handleForgotPassword(event) {
     }
 }
 
-function validateLogin(event) {
-    event.preventDefault();
-    alert("Login client-side validation passed. Ready for PHP backend.");
-    return true;
-}
-
 function validateRegister(event) {
-    event.preventDefault();
     const pwd = document.getElementById('reg-password').value;
     const confirmPwd = document.getElementById('reg-confirm-password').value;
     const errorMsg = document.getElementById('password-error');
 
     if (pwd !== confirmPwd) {
         errorMsg.style.display = 'block';
+        event.preventDefault();
         return false;
     }
     
     errorMsg.style.display = 'none';
-    alert("Registration client-side validation passed. Ready for PHP backend.");
     return true;
 }

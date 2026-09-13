@@ -86,17 +86,27 @@ nav {
     font-size: 16px;
 }
 
-.card-form {
+.overview-grid {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.chart-card {
     background: var(--white);
     border: 1px solid var(--border-light);
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    margin-bottom: 40px;
+    flex: 1;
+}
+
+.full-width-card {
+    width: 100%;
 }
 
 .card-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -104,155 +114,40 @@ nav {
     color: var(--text-main);
 }
 
-.date-input-group {
-    max-width: 200px;
-}
-
-.form-grid {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 20px;
-}
-
-.form-section {
-    flex: 1;
-}
-
-.form-section h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: var(--primary-accent);
-}
-
-.input-group {
-    margin-bottom: 15px;
-}
-
-.input-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.input-group input[type="number"],
-.input-group input[type="date"],
-.input-group select,
-.input-group textarea {
+.canvas-wrapper {
+    position: relative;
     width: 100%;
-    padding: 10px;
-    border: 1px solid var(--border-light);
-    border-radius: 6px;
-    font-size: 14px;
-    color: var(--text-main);
-}
-
-.input-group textarea {
-    resize: vertical;
-    height: 70px;
-}
-
-.checkbox-group {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.checkbox-item {
-    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.pie-wrapper {
+    height: 300px;
+}
+
+.bar-wrapper, .line-wrapper {
+    height: 350px;
+}
+
+.tags-overview {
+    display: flex;
     gap: 10px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.checkbox-item input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--primary-accent);
-    cursor: pointer;
-}
-
-.btn-submit-log {
-    background-color: var(--primary-accent);
-    color: var(--white);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-}
-
-.btn-submit-log:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-}
-
-.card-table {
-    background: var(--white);
-    border: 1px solid var(--border-light);
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    font-size: 14px;
-}
-
-th, td {
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--border-light);
-}
-
-th {
-    background-color: var(--bg-color);
-    color: var(--text-muted);
-    font-weight: 600;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .status-badge {
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.badge-good {
-    background-color: #d1fae5;
-    color: #065f46;
-}
-
-.badge-low {
-    background-color: #fef3c7;
-    color: #92400e;
-}
-
-.action-btn {
-    background: none;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
+    padding: 6px 14px;
+    border-radius: 20px;
     font-size: 13px;
-    margin-right: 10px;
+    font-weight: 600;
 }
 
-.btn-edit {
-    color: var(--primary-accent);
-}
-
-.btn-delete {
-    color: var(--danger-color);
-}
+.badge-productive { background-color: #d1fae5; color: #065f46; }
+.badge-restful { background-color: #e0e7ff; color: var(--primary-accent); }
+.badge-stressed { background-color: #fee2e2; color: #991b1b; }
+.badge-growth { background-color: #fef3c7; color: #92400e; }
 
 @media (max-width: 768px) {
     nav {
@@ -260,11 +155,7 @@ th {
         flex-direction: column;
         gap: 16px;
     }
-    .form-grid {
+    .overview-grid {
         flex-direction: column;
-        gap: 20px;
-    }
-    .dashboard-container {
-        margin: 20px auto;
     }
 }

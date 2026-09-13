@@ -211,6 +211,11 @@ nav {
     gap: 12px;
 }
 
+.inline-form {
+    display: inline;
+    margin: 0;
+}
+
 .btn-complete {
     background-color: var(--success-color);
     color: var(--white);

@@ -10,7 +10,7 @@
 
 <div class="auth-container">
     <div class="auth-info">
-        <h1>DayTrace</h1>
+        <a href="index.html" style="text-decoration: none; color: white;"><h1>DayTrace</h1></a>
         <p>The centralized web-based personal utility platform designed to solve your personal management challenges.</p>
         <ul>
             <li>Track consistency across essential health habits</li>
@@ -26,7 +26,8 @@
             <button id="toggle-register" onclick="switchTab('register')">Register</button>
         </div>
 
-        <form id="login-form" class="form-view active" onsubmit="return validateLogin(event)">
+        <form id="login-form" class="form-view active" action="process_auth.php" method="POST">
+            <input type="hidden" name="action" value="login">
             <div class="input-group">
                 <label for="login-email">Email Address</label>
                 <input type="email" id="login-email" name="email" required>
@@ -39,13 +40,10 @@
                 </div>
             </div>
             <button type="submit" class="btn-submit">Sign In</button>
-            <div class="bypass-link-wrapper">
-                <a href="dashboard.html" class="link-bypass">Bypass Login & Go to Dashboard</a><br>
-                <a href="admin.html" class="link-bypass">Admin Page</a>
-            </div>
         </form>
 
-        <form id="register-form" class="form-view" onsubmit="return validateRegister(event)">
+        <form id="register-form" class="form-view" action="process_auth.php" method="POST" onsubmit="return validateRegister(event)">
+            <input type="hidden" name="action" value="register">
             <div class="input-group">
                 <label for="reg-username">Username</label>
                 <input type="text" id="reg-username" name="username" required>
