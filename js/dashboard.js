@@ -76,26 +76,31 @@ function renderJournalSummary(journalData) {
     if (counterElement) {
         counterElement.textContent = `Total Reflections Logged: ${journalData.total}`;
     }
-
     const journalCtx = document.getElementById('journalGraph');
     if (!journalCtx) return;
 
     new Chart(journalCtx, {
-        type: 'line',
+        type: 'bar', 
         data: {
-            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            labels: journalData.labels, 
             datasets: [{
-                label: 'Logged Entries',
-                data: [journalData.total > 0 ? journalData.total : 0, journalData.total],
-                borderColor: '#334155',
-                backgroundColor: 'rgba(99, 102, 241, 0.1)',
-                fill: true,
-                tension: 0.4
+                label: 'Logs Made',
+                data: journalData.counts, 
+                backgroundColor: '#f59e0b', 
+                borderRadius: 4
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            scales: {
+                y: { 
+                    beginAtZero: true,
+                    ticks: { 
+                        precision: 0 
+                    } 
+                }
+            },
             plugins: {
                 legend: { display: false }
             }

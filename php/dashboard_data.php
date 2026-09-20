@@ -48,13 +48,21 @@ foreach ($sleepRows as $row) {
     $sleepEnergy[] = (int)$row['energy_rating'] * 2;
 }
 
-$journalStmt = $pdo->prepare("
-    SELECT COUNT(*) AS total_entries 
-    FROM journal_entries 
-    WHERE user_id = :user_id
-");
+$journalStmt = $pdo->prepare("SELECT COUNT(*) AS total_entries FROM journal_entries WHERE user_id = :user_id");
 $journalStmt->execute([':user_id' => $user_id]);
 $journalTotal = (int)$journalStmt->fetchColumn();
+
+$journalLabels = [];
+$journalCounts = [];
+
+for ($i = 6; $i >= 0; $i--) {
+    $currentDate = date('Y-m-d', strtotime("-$i days"));
+    $journalLabels[] = date('D', strtotime($currentDate)); 
+    
+    $dayStmt = $pdo->prepare("SELECT COUNT(*) FROM journal_entries WHERE user_id = :user_id AND entry_date = :entry_date");
+    $dayStmt->execute([':user_id' => $user_id, ':entry_date' => $currentDate]);
+    $journalCounts[] = round((int)$dayStmt->fetchColumn());
+}
 
 echo json_encode([
     'habits' => [
@@ -67,7 +75,9 @@ echo json_encode([
         'energy' => !empty($sleepEnergy) ? $sleepEnergy : [0, 0, 0, 0, 0, 0, 0]
     ],
     'journal' => [
-        'total' => $journalTotal
+        'total' => $journalTotal,
+        'labels' => $journalLabels,
+        'counts' => $journalCounts
     ]
 ]);
 ?>

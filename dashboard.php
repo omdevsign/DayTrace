@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
 
     <nav>
-        <a href="index.html" class="logo">DayTrace</a>
+        <a href="dashboard.php" class="logo">DayTrace</a>
         <ul class="nav-links">
             <li><a href="dashboard.php" class="active">Dashboard</a></li>
             <li><a href="habits.php">Habits</a></li>

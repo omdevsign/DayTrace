@@ -42,7 +42,7 @@ $entries = getJournalEntries($pdo, $user_id);
 <body>
 
     <nav>
-        <a href="index.php" class="logo">DayTrace</a>
+        <a href="dashboard.php" class="logo">DayTrace</a>
         <ul class="nav-links">
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="habits.php">Habits</a></li>
@@ -130,6 +130,6 @@ $entries = getJournalEntries($pdo, $user_id);
             </div>
         </div>
     </div>
-
+<script src="js/journal.js"></script>
 </body>
 </html>

@@ -36,10 +36,6 @@ $users = getAllUsers($pdo);
     <nav>
         <a href="index.html" class="logo">DayTrace</a>
         <ul class="nav-links">
-            <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="habits.php">Habits</a></li>
-            <li><a href="sleep.php">Sleep & Recovery</a></li>
-            <li><a href="journal.php">Micro-Journal</a></li>
             <li style="color: var(--text-main); font-weight: 600; padding: 0 15px; border-right: 1px solid var(--border-light);"><?= htmlspecialchars($_SESSION['username'] ?? 'Admin') ?></li>
             <li><a href="logout.php" class="btn-logout">Logout</a></li>
         </ul>
