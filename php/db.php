@@ -2,7 +2,7 @@
 $host = 'localhost';
 $port = 3306;
 $username = 'root';
-$password = 'root';
+$password = 'tiger';
 $dbname = 'daytrace_db';
 
 try {
